@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+        #panorama {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="panorama"></div>
+    <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "frame50",
+                "author": "Xi Yan",
+                "sceneFadeDuration": 1000
+            },
+
+            "scenes": {
+                "frame50": {
+                    "title": "frame 50",
+                    "hfov": 270,
+                    "pitch": -10,
+                    "yaw": 10,
+                    "type": "equirectangular",
+                    "panorama": "sources/frame_50.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -30,
+                            "yaw": 20,
+                            "type": "scene",
+                            "text": "frame 100",
+                            "sceneId": "frame100"
+                        },
+                        {
+                            "pitch": -20,
+                            "yaw": 20,
+                            "type": "scene",
+                            "text": "frame 150",
+                            "sceneId": "frame150"
+                        }
+                    ]
+                },
+                "frame100": {
+                    "title": "frame 100",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 40,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/2103f674f050f648e0a85d819d81268df7.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 220,
+                            "type": "scene",
+                            "text": "frame 50",
+                            "sceneId": "frame50"
+                        }, {
+                            "pitch": -30,
+                            "yaw": 30,
+                            "type": "scene",
+                            "text": "frame 150",
+                            "sceneId": "frame150"
+                        }
+                    ]
+                },
+                "frame150": {
+                    "title": "frame 150",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 45,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/21241e42488e184496bf3d5fd08c3e0189.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 220,
+                            "type": "scene",
+                            "text": "frame 100",
+                            "sceneId": "frame100"
+                        },
+                        {
+                            "pitch": -30,
+                            "yaw": 30,
+                            "type": "scene",
+                            "text": "frame 200",
+                            "sceneId": "frame200"
+                        }
+                    ]
+                },
+                "frame200": {
+                    "title": "frame 200",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 40,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/21258ec2fbfa0e400dbd1dcac31eeb9cc0.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 200,
+                            "type": "scene",
+                            "text": "frame 150",
+                            "sceneId": "frame150"
+                        }, {
+                            "pitch": -30,
+                            "yaw": 35,
+                            "type": "scene",
+                            "text": "frame 250",
+                            "sceneId": "frame250"
+                        }
+                    ]
+                },
+                "frame250": {
+                    "title": "frame 250",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 45,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/21270dd627c15e425ea306a8a18285b545.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 230,
+                            "type": "scene",
+                            "text": "frame 200",
+                            "sceneId": "frame200"
+                        },
+                        {
+                            "pitch": -30,
+                            "yaw": 10,
+                            "type": "scene",
+                            "text": "frame 300",
+                            "sceneId": "frame300"
+                        }
+                    ]
+                },
+                "frame300": {
+                    "title": "frame 300",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 40,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/21277f5366d6d446298f926fe1b9ffa42b.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 200,
+                            "type": "scene",
+                            "text": "frame 250",
+                            "sceneId": "frame250"
+                        },
+                        {
+                            "pitch": -30,
+                            "yaw": 10,
+                            "type": "scene",
+                            "text": "frame 350",
+                            "sceneId": "frame350"
+                        }
+                    ]
+                },
+                "frame350": {
+                    "title": "frame 350",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 40,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/21297bd85d8cb345958f384de1a49b13be.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 200,
+                            "type": "scene",
+                            "text": "frame 300",
+                            "sceneId": "frame300"
+                        },
+                        {
+                            "pitch": -30,
+                            "yaw": 10,
+                            "type": "scene",
+                            "text": "frame 00",
+                            "sceneId": "frame400"
+                        }
+                    ]
+                },
+                "frame400": {
+                    "title": "frame 400",
+                    "hfov": 180,
+                    "pitch": 10,
+                    "yaw": 40,
+                    "type": "equirectangular",
+                    "panorama": "https://picture.gptkong.com/20241109/21295f7080e8ef440cb6551387bdb4daff.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -20,
+                            "yaw": 200,
+                            "type": "scene",
+                            "text": "frame 350",
+                            "sceneId": "frame350"
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
