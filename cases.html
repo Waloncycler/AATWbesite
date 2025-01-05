@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>案例研究 - 筑建AI科技</title>
+        <title>案例研究 - 智惟筑建科技</title>
         <link href="css/style.css" rel="stylesheet">
         <link href="https://cdn.bootcdn.net/ajax/libs/pannellum/2.5.6/pannellum.css" rel="stylesheet" />
         <style>
@@ -189,7 +189,7 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">筑建AI科技</div>
+            <div class="logo">智惟筑建科技</div>
             <div class="nav-links">
                 <a href="index.html">首页</a>
                 <a href="cases.html">案例研究</a>
@@ -205,22 +205,19 @@
     </section>
 
     <section class="case-studies">
-        <!-- 变形监测案例 -->
         <div class="case-card">
-            <div class="case-image">
-                <div id="panorama"></div>
-            </div>
             <div class="case-content">
-                <h2>变形监测系统应用案例</h2>
-                <p>在某特大桥梁项目中，我们部署了基于计算机视觉的实时变形监测系统，实现了毫米级精度的位移监测。</p>
-
+                <h2>建筑VR数字档案</h2>
+                <p>通过全景相机拍摄实景图片完成建筑巡检后，将根据全景影像构造出毫米级精度的建筑VR数字档案，创建线上虚拟漫游空间。</p>
+                <div class="case-image">
+                    <div id="panorama"></div>
+                </div>
                 <div class="case-details">
                     <div class="tech-spec">
                         <h3>技术规格</h3>
                         <ul>
-                            <li>监测距离: 5-500米</li>
-                            <li>像素分辨率: 0.1mm</li>
-                            <li>采样频率: 50Hz</li>
+                            <li>监测距离: 5-50米</li>
+                            <li>像素分辨率: 1-5mm</li>
                             <li>精度: ±0.5mm</li>
                         </ul>
                     </div>
@@ -232,13 +229,12 @@
         </div>
 
         <div class="case-card">
-            <div class="case-image">
-                <div id="panorama"></div>
-            </div>
             <div class="case-content">
-                <h2>智能裂缝监测案例</h2>
-                <p>为某历史建筑提供长期裂缝监测解决方案，通过AI算法实现自动化裂缝识别与评估。</p>
-
+                <h2>智能建筑结构检测/监测</h2>
+                <p> 通过定期三维扫描视觉巡检获得整体点云数据，定期对桥梁及古建筑等进行构件级别的安全性、稳定性评估</p>
+                <div class="case-image">
+                    <img id="container" class="interactive-model"></div>
+                </div>
                 <div class="metrics-grid">
                     <div class="metric-card">
                         <h3>监测时长</h3>
@@ -256,15 +252,13 @@
             </div>
         </div>
 
-        <!-- 建筑三维重建案例 -->
         <div class="case-card">
-            <div class="case-image">
-                <div id="container" class="interactive-model"></div>
-            </div>
             <div class="case-content">
                 <h2>建筑三维重建案例</h2>
                 <p>利用SLAM技术对某商业综合体进行三维重建，生成高精度点云模型，支持虚拟巡检和空间分析。</p>
-
+                <div class="case-image">
+                    <img src="sources/3DSLMDEMO.jpg" alt="三维点云模型图片展示" width="250" height="250">
+                </div>
                 <div class="case-details">
                     <div class="tech-spec">
                         <h3>项目成果</h3>
@@ -283,29 +277,20 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <h3>筑建AI科技</h3>
-                <p>地址: 北京市海淀区科技园区</p>
+                <h3>智惟筑建科技</h3>
+                <p>地址: 北京市大兴区</p>
                 <p>电话: (010) 1234-5678</p>
                 <p>邮箱: contact@archiai-tech.com</p>
-            </div>
-            <div class="footer-links">
-                <h3>快速链接</h3>
-                <ul>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="services.html">服务</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                </ul>
             </div>
             <div class="footer-social">
                 <h3>关注我们</h3>
                 <div class="social-icons">
-                    <a href="#"><img src="images/wechat.svg" alt="微信"></a>
-                    <a href="#"><img src="images/linkedin.svg" alt="领英"></a>
+                    <a href="#"><img src="sources/contact_img.png" alt="微信"></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 筑建AI科技 版权所有</p>
+            <p>&copy; 2024 智惟筑建科技 版权所有</p>
         </div>
     </footer>
 
@@ -377,14 +362,14 @@
             "yaw": -135.4,
             "hfov": 120
         });
-        </script>
-    <script>
+        
         // 设置承载容器的宽度高度撑满浏览器可视区域
         var width = 1000;
         var height = 1000;
         var container = document.getElementById("container");
         container.style.width = `${width}px`;
         container.style.height = `${height}px`;
+        
 
         // viewer 配置及时间监听处理
         var viewer = pannellum.viewer("container", {
