@@ -170,6 +170,16 @@
                 font-weight: bold;
             }
 
+            .footer-class {
+                background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                color: white;
+                padding: 5rem 2rem;
+                text-align: center;
+            }
+
             @media (max-width: 768px) {
                 .nav-links {
                     display: none;
@@ -194,7 +204,6 @@
                 <a href="index.html">首页</a>
                 <a href="cases.html">案例研究</a>
                 <a href="services.html">服务与解决方案</a>
-                <a href="#contact">联系我们</a>
             </div>
         </nav>
     </header>
@@ -210,22 +219,24 @@
                 <h2>建筑VR数字档案</h2>
                 <p>通过全景相机拍摄实景图片完成建筑巡检后，将根据全景影像构造出毫米级精度的建筑VR数字档案，创建线上虚拟漫游空间。</p>
                 <div class="case-image">
-                    <div id="panorama"></div>
-                </div>
-                <div class="case-details">
-                    <div class="tech-spec">
-                        <h3>技术规格</h3>
-                        <ul>
-                            <li>监测距离: 5-50米</li>
-                            <li>像素分辨率: 1-5mm</li>
-                            <li>精度: ±0.5mm</li>
-                        </ul>
-                    </div>
-                    <div class="data-visualization">
-                        <canvas id="deformationChart"></canvas>
-                    </div>
+                    <img src="sources/ancientarchi.GIF" alt="建筑VR数字档案" width="150" height="150">
                 </div>
             </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>监测距离</h3>
+                    <div class="metric-value">5-50m</div>
+                </div>
+                <div class="metric-card">
+                    <h3>精度</h3>
+                    <div class="metric-value">±5mm</div>
+                </div>
+                <div class="metric-card">
+                    <h3>像素分辨率</h3>
+                    <div class="metric-value">1-3cm</div>
+                </div>
+            </div>
+        </div>
         </div>
 
         <div class="case-card">
@@ -233,20 +244,20 @@
                 <h2>智能建筑结构检测/监测</h2>
                 <p> 通过定期三维扫描视觉巡检获得整体点云数据，定期对桥梁及古建筑等进行构件级别的安全性、稳定性评估</p>
                 <div class="case-image">
-                    <img id="container" class="interactive-model"></div>
+                    <img src="sources/3DSLMDEMO.jpg" alt="三维点云模型图片展示" width="250" height="250">
                 </div>
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <h3>监测时长</h3>
-                        <div class="metric-value">365天</div>
+                        <h3>巡检拍摄</h3>
+                        <div class="metric-value">3-10分钟</div>
                     </div>
                     <div class="metric-card">
-                        <h3>数据采集点</h3>
-                        <div class="metric-value">50+</div>
+                        <h3>数据存档</h3>
+                        <div class="metric-value">云端存储</div>
                     </div>
                     <div class="metric-card">
-                        <h3>识别准确率</h3>
-                        <div class="metric-value">99.8%</div>
+                        <h3>健康管理</h3>
+                        <div class="metric-value">在线实时管理</div>
                     </div>
                 </div>
             </div>
@@ -257,24 +268,27 @@
                 <h2>建筑三维重建案例</h2>
                 <p>利用SLAM技术对某商业综合体进行三维重建，生成高精度点云模型，支持虚拟巡检和空间分析。</p>
                 <div class="case-image">
-                    <img src="sources/3DSLMDEMO.jpg" alt="三维点云模型图片展示" width="250" height="250">
+                    <img src="sources/archidemo.gif" alt="三维模型重建" width="150" height="150">
                 </div>
-                <div class="case-details">
-                    <div class="tech-spec">
-                        <h3>项目成果</h3>
-                        <ul>
-                            <li>建筑面积: 50,000㎡</li>
-                            <li>点云密度: 5000点/㎡</li>
-                            <li>重建精度: ±2cm</li>
-                            <li>建模时间: 48小时</li>
-                        </ul>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>三维重建</h3>
+                        <div class="metric-value">点云技术</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>视觉监测</h3>
+                        <div class="metric-value">构件级别</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>智能分析</h3>
+                        <div class="metric-value">趋势分析</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer-class">
         <div class="footer-content">
             <div class="footer-info">
                 <h3>智惟筑建科技</h3>
@@ -289,35 +303,9 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 智惟筑建科技 版权所有</p>
-        </div>
     </footer>
 
     <script>
-        // 变形监测数据可视化
-        const ctx = document.getElementById('deformationChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
-                datasets: [{
-                    label: '变形量(mm)',
-                    data: [0, 0.5, 0.8, 1.2, 1.1, 1.3],
-                    borderColor: '#2196F3',
-                    tension: 0.1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
         // 3D模型展示
         function init3DModel() {
             const scene = new THREE.Scene();
@@ -362,14 +350,14 @@
             "yaw": -135.4,
             "hfov": 120
         });
-        
+
         // 设置承载容器的宽度高度撑满浏览器可视区域
         var width = 1000;
         var height = 1000;
         var container = document.getElementById("container");
         container.style.width = `${width}px`;
         container.style.height = `${height}px`;
-        
+
 
         // viewer 配置及时间监听处理
         var viewer = pannellum.viewer("container", {
