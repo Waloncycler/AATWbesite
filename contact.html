@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我们 - 智惟筑建科技</title>
+    <title>关于我们 - 智惟科技</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         /* 全局变量与基础设置 */
@@ -200,7 +200,7 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
+            text-align: left;
             transition: transform 0.3s ease;
         }
 
@@ -218,19 +218,25 @@
 
         .team-member h3 {
             color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .capability-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .capability-item h4 {
+            color: #444;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .team-member .position {
+        .capability-item p {
             color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .team-member p {
-            color: #555;
-            font-size: 0.95rem;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* 联系信息样式 */
@@ -326,7 +332,7 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">智惟筑建科技</div>
+            <div class="logo">智惟科技</div>
             <div class="nav-links">
                 <a href="index.html">首页</a>
                 <div class="dropdown">
@@ -353,7 +359,7 @@
     <section class="company-intro">
         <div class="about-content" data-aos="fade-up">
             <h2 class="section-header">公司简介</h2>
-            <p>智惟筑建科技是一家专注于建筑工程领域的人工智能科技公司，致力于利用先进的人工智能技术为建筑工程行业赋能。我们基于计算机视觉、自然语言处理等技术，提供智能图纸解析、工程现场监测、智能文档处理等产品和服务，帮助提升工程建设效率，降低施工风险，实现建筑工程的智能化转型。
+            <p>智惟科技是一家专注于建筑工程领域的人工智能科技公司，致力于利用先进的人工智能技术为建筑工程行业赋能。我们基于计算机视觉、自然语言处理等技术，提供智能图纸解析、工程现场监测、智能文档处理等产品和服务，帮助提升工程建设效率，降低施工风险，实现建筑工程的智能化转型。
             </p>
         </div>
     </section>
@@ -363,22 +369,37 @@
             <h2 class="section-header">核心团队</h2>
             <div class="team-grid">
                 <div class="team-member" data-aos="fade-up">
-                    <img src="images/team1.jpg" alt="张总经理">
-                    <h3>张明</h3>
-                    <div class="position">创始人 & CEO</div>
-                    <p>清华大学计算机博士，在人工智能领域拥有十年研发经验，曾在多个国际顶级会议发表论文。</p>
+                    <h3>学术研究能力</h3>
+                    <div class="capability-item">
+                        <h4>学历背景</h4>
+                        <p>成员毕业于清华、北交、中石油和大连理工等顶尖高校的硕博士</p>
+                    </div>
+                    <div class="capability-item">
+                        <h4>跨学科背景</h4>
+                        <p>部分成员具有土木工程和结构健康监测的学术背景，团队具备跨学科的研究能力</p>
+                    </div>
                 </div>
                 <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/team2.jpg" alt="李博士">
-                    <h3>李华</h3>
-                    <div class="position">首席技术官</div>
-                    <p>北京大学人工智能研究所博士，专注于计算机视觉和深度学习技术在工程领域的应用研究。</p>
+                    <h3>技术专业性</h3>
+                    <div class="capability-item">
+                        <h4>资深团队</h4>
+                        <p>由12位资深AI算法工程师组成，具备深厚的编程技术和专业知识。</p>
+                    </div>
+                    <div class="capability-item">
+                        <h4>技术全面性</h4>
+                        <p>成员的专业技能覆盖自然语言处理、计算机视觉等多个AI领域。</p>
+                    </div>
                 </div>
                 <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/team3.jpg" alt="王工程师">
-                    <h3>王强</h3>
-                    <div class="position">首席产品官</div>
-                    <p>同济大学土木工程博士，拥有15年建筑工程经验，深谙行业痛点与需求。</p>
+                    <h3>工程项目经验</h3>
+                    <div class="capability-item">
+                        <h4>履职经历</h4>
+                        <p>团队成员在百度、微软、字节跳动等头部互联网企业中担任要职，具有丰富的行业经验和项目管理能力。</p>
+                    </div>
+                    <div class="capability-item">
+                        <h4>项目经验</h4>
+                        <p>曾开发大语言模型、智能工程图表解析、视觉变形监测、合同评审、ocr文档识别等工程项目</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -394,7 +415,7 @@
                             d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
                     </svg>
                     <h3>公司地址</h3>
-                    <p>北京市朝阳区科技园区88号智能大厦A座</p>
+                    <p>北京市大兴区</p>
                 </div>
                 <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
                     <svg viewBox="0 0 24 24">
@@ -402,7 +423,7 @@
                             d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                     </svg>
                     <h3>电子邮箱</h3>
-                    <p>contact@zhiweizhu.com</p>
+                    <p>services@aat.com</p>
                 </div>
                 <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                     <svg viewBox="0 0 24 24">
@@ -410,7 +431,7 @@
                             d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
                     </svg>
                     <h3>联系电话</h3>
-                    <p>400-888-9999</p>
+                    <p>188-1072-4099</p>
                 </div>
             </div>
         </div>
@@ -421,7 +442,6 @@
             <h2>开启智能建筑新时代</h2>
             <p>联系我们，探讨您的项目需求</p>
             <p>电话: 188-1072-4099</p>
-            <img src="sources/contact_img.png" width="150" height="150" alt="立即咨询">
         </div>
     </section>
 

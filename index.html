@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>智惟筑建科技 - 建筑工程AI解决方案</title>
+        <title>智惟科技 - 建筑工程AI解决方案</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
         <style>
             /* 全局变量与基础设置 */
@@ -29,7 +29,8 @@
                 font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
                 line-height: 1.6;
                 color: var(--text-color);
-                padding-top: 80px; /* 为固定导航栏留出空间 */
+                padding-top: 80px;
+                /* 为固定导航栏留出空间 */
             }
 
             /* 导航栏样式 */
@@ -74,8 +75,8 @@
             }
 
             /* 主导航链接样式 */
-            .nav-links > a,
-            .dropdown > a {
+            .nav-links>a,
+            .dropdown>a {
                 text-decoration: none;
                 color: #333;
                 font-weight: 500;
@@ -86,8 +87,8 @@
             }
 
             /* 链接悬停效果 */
-            .nav-links > a:hover,
-            .dropdown > a:hover {
+            .nav-links>a:hover,
+            .dropdown>a:hover {
                 color: var(--primary-color);
             }
 
@@ -100,7 +101,7 @@
                 transform: translateX(-50%);
                 background-color: #fff;
                 min-width: 180px;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
                 border-radius: 8px;
                 padding: 8px 0;
                 opacity: 0;
@@ -136,7 +137,7 @@
             }
 
             /* 添加下拉箭头指示器 */
-            .dropdown > a::after {
+            .dropdown>a::after {
                 content: '';
                 display: inline-block;
                 width: 6px;
@@ -150,10 +151,15 @@
                 transition: all 0.3s ease;
             }
 
-            .dropdown:hover > a::after {
+            .dropdown:hover>a::after {
                 transform: rotate(-135deg);
                 top: 1px;
                 border-color: var(--primary-color);
+            }
+
+            /* 下拉菜单分隔线 */
+            .dropdown-content a:not(:last-child) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             }
 
             /* Hero区域样式 */
@@ -164,8 +170,8 @@
                 justify-content: center;
                 padding: 2rem;
                 text-align: center;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                            url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
@@ -186,6 +192,7 @@
                 font-size: 3rem;
                 margin-bottom: 1.5rem;
                 background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+                background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -587,13 +594,66 @@
             .dropdown-content a:not(:last-child) {
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             }
+
+            /* 合作伙伴区块样式 */
+            .partners {
+                padding: 4rem 2rem;
+                background: #fff;
+            }
+
+            .partners-grid {
+                max-width: 1200px;
+                margin: 2rem auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 3rem;
+            }
+
+            .partner-card {
+                flex: 0 1 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .partner-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .partner-logo {
+                max-width: 100%;
+                height: auto;
+                max-height: 150px;
+                object-fit: contain;
+                opacity: 0.7;
+                transition: all 0.3s ease;
+            }
+
+            .partner-card:hover .partner-logo {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+
+            @media (max-width: 768px) {
+                .partners-grid {
+                    gap: 2rem;
+                }
+
+                .partner-card {
+                    flex: 0 1 150px;
+                }
+            }
         </style>
     </head>
 
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">智惟筑建科技</div>
+            <div class="logo">智惟科技</div>
             <div class="nav-links">
                 <a href="index.html">首页</a>
                 <div class="dropdown">
@@ -612,7 +672,7 @@
 
     <section class="hero" id="home">
         <div class="hero-content" data-aos="fade-up">
-            <h1>建筑工程AI解决方案引领者</h1>
+            <h1>建筑工程AI解决方案</h1>
             <p>通过AI赋能建筑工程，为土木与基建工程的智能化建造和运维提供创新解决方案</p>
         </div>
     </section>
@@ -727,10 +787,37 @@
             </div>
         </div>
     </section>
+    <section class="partners" id="partners">
+        <div class="section-header" data-aos="fade-up">
+            <h2>合作伙伴</h2>
+            <p>携手行业领先企业，共同推进建筑工程智能化发展</p>
+        </div>
+        <div class="partners-grid" data-aos="fade-up">
+            <div class="partner-card">
+                <img src="sources/zgjj.png" alt="OpenSpace"
+                    class="partner-logo">
+            </div>
+            <div class="partner-card">
+                <img src="sources/hxsn.jpg"
+                    alt="StructionSite" class="partner-logo">
+            </div>
+            <div class="partner-card">
+                <img src="sources/zgsy.jpg" alt="HoloBuilder"
+                    class="partner-logo">
+            </div>
+            <div class="partner-card">
+                <img src="sources/jyy.jpg"
+                    alt="DroneDeploy" class="partner-logo">
+            </div>
+            <div class="partner-card">
+                <img src="sources/zgjz.png" alt="Cupix" class="partner-logo">
+            </div>
+        </div>
+    </section>
 
     <section class="cases-section" id="cases">
         <div class="section-header" data-aos="fade-up">
-            <h2>成功案例</h2>
+            <h2>相关案例</h2>
             <p>我们为众多大型工程项目提供智能化解决方案</p>
         </div>
         <div class="cases-grid">
@@ -804,7 +891,6 @@
             <h2>开启智能建筑新时代</h2>
             <p>联系我们，探讨您的项目需求</p>
             <p>电话: 188-1072-4099</p>
-            <img src="sources/contact_img.png" width="150" height="150" alt="立即咨询"></img>
         </div>
     </section>
 
