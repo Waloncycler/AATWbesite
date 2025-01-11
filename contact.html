@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 智惟筑建科技</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .company-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .company-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .team-section {
+            padding: 4rem 0;
+            background: var(--light-bg);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .position {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+        }
+
+        .contact-item svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">智惟筑建科技</div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="cases.html">案例研究</a>
+                <a href="services.html">服务与解决方案</a>
+                <a href="contact.html">关于我们</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>关于我们</h1>
+            <p>用AI技术赋能建筑工程，创造智能建筑新未来</p>
+        </div>
+    </section>
+
+    <section class="company-intro">
+        <div class="about-content" data-aos="fade-up">
+            <h2>公司简介</h2>
+            <p>智惟筑建科技是一家专注于建筑工程领域的人工智能科技公司，致力于利用先进的人工智能技术为建筑工程行业赋能。我们基于计算机视觉、自然语言处理等技术，提供智能图纸解析、工程现场监测、智能文档处理等产品和服务，帮助提升工程建设效率，降低施工风险，实现建筑工程的智能化转型。</p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="about-content">
+            <h2 class="section-header">核心团队</h2>
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up">
+                    <img src="images/team1.jpg" alt="张总经理">
+                    <h3>张明</h3>
+                    <div class="position">创始人 & CEO</div>
+                    <p>清华大学计算机博士，在人工智能领域拥有十年研发经验，曾在多个国际顶级会议发表论文。</p>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/team2.jpg" alt="李博士">
+                    <h3>李华</h3>
+                    <div class="position">首席技术官</div>
+                    <p>北京大学人工智能研究所博士，专注于计算机视觉和深度学习技术在工程领域的应用研究。</p>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/team3.jpg" alt="王工程师">
+                    <h3>王强</h3>
+                    <div class="position">首席产品官</div>
+                    <p>同济大学土木工程博士，拥有15年建筑工程经验，深谙行业痛点与需求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="about-content">
+            <h2 class="section-header">联系我们</h2>
+            <div class="contact-grid">
+                <div class="contact-item" data-aos="fade-up">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                    </svg>
+                    <h3>公司地址</h3>
+                    <p>北京市朝阳区科技园区88号智能大厦A座</p>
+                </div>
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                    </svg>
+                    <h3>电子邮箱</h3>
+                    <p>contact@zhiweizhu.com</p>
+                </div>
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                    </svg>
+                    <h3>联系电话</h3>
+                    <p>400-888-9999</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html> 
