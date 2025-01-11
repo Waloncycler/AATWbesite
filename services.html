@@ -1,258 +1,317 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <base href="services.html">
-    <!DOCTYPE html>
-    <html lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务与解决方案 - 智惟筑建科技</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* 全局变量与基础设置 */
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1976D2;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --bg-color: #f5f7fa;
+        }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>服务与解决方案 - 智惟筑建科技</title>
-        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-        <style>
-            :root {
-                --primary-color: #2196F3;
-                --secondary-color: #1976D2;
-                --text-color: #333;
-                --light-bg: #f5f7fa;
-            }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #fff;
+            padding-top: 80px;
+        }
 
-            body {
-                font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-                line-height: 1.6;
-                color: var(--text-color);
-                background: #fff;
-            }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
+        /* 导航栏样式 */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
 
-            /* 服务详情页面样式 */
-            .service-detail {
-                padding: 80px 0;
-            }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            position: relative;
+        }
 
-            .header {
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-                background: rgba(255, 255, 255, 0.95);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-            .nav-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1rem 2rem;
-            }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
 
-            .logo {
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: var(--primary-color);
+        .nav-links > a,
+        .dropdown > a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links > a:hover,
+        .dropdown > a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 下拉菜单样式 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            padding: 0.8rem 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            min-width: 180px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            padding-left: 24px;
+        }
+
+        .dropdown > a::after {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid #333;
+            border-bottom: 2px solid #333;
+            transform: rotate(45deg);
+            margin-left: 8px;
+            position: relative;
+            top: -2px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover > a::after {
+            transform: rotate(-135deg);
+            top: 1px;
+            border-color: var(--primary-color);
+        }
+
+        /* 服务详情区域样式 */
+        .service-detail {
+            padding: 40px 0;
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
+            padding: 60px 0;
+            border-radius: 15px;
+        }
+
+        .service-header h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-header p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 功能特性卡片 */
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            fill: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* 技术规格区域 */
+        .technical-specs {
+            background: var(--bg-color);
+            padding: 60px 0;
+            margin: 40px 0;
+            border-radius: 15px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .spec-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spec-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* 应用领域区域 */
+        .application-areas {
+            margin: 60px 0;
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .area-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .area-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .area-content {
+            padding: 20px;
+        }
+
+        /* 联系我们区域 */
+        .contact-section {
+            background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)),
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .service-features,
+            .specs-grid,
+            .area-grid {
+                grid-template-columns: 1fr;
             }
 
             .nav-links {
-                display: flex;
-                gap: 2rem;
+                display: none;
             }
-
-            .nav-links a {
-                text-decoration: none;
-                color: var(--text-color);
-                font-weight: 500;
-                transition: color 0.3s ease;
-            }
-
-            .nav-links a:hover {
-                color: var(--primary-color);
-            }
-
-            .service-header {
-                text-align: center;
-                margin-bottom: 60px;
-                background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
-                padding: 60px 0;
-                border-radius: 15px;
-            }
-
-            .service-header h1 {
-                font-size: 2.5em;
-                color: var(--primary-color);
-                margin-bottom: 20px;
-            }
-
-            .service-header p {
-                font-size: 1.2em;
-                color: #666;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .service-features {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-                margin: 60px 0;
-            }
-
-            .feature-card {
-                background: white;
-                border-radius: 15px;
-                padding: 30px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-                transition: transform 0.3s ease;
-            }
-
-            .feature-card:hover {
-                transform: translateY(-10px);
-            }
-
-            .feature-icon {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 20px;
-                fill: var(--primary-color);
-            }
-
-            .feature-card h3 {
-                font-size: 1.4em;
-                margin-bottom: 15px;
-                color: var(--primary-color);
-            }
-
-            .technical-specs {
-                background: var(--bg-color);
-                padding: 60px 0;
-                margin: 40px 0;
-                border-radius: 15px;
-            }
-
-            .specs-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            .spec-item {
-                text-align: center;
-                padding: 20px;
-            }
-
-            .spec-item h4 {
-                font-size: 1.2em;
-                margin-bottom: 10px;
-                color: var(--secondary-color);
-            }
-
-            .spec-item p {
-                color: #666;
-            }
-
-            .application-areas {
-                margin: 60px 0;
-            }
-
-            .area-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            .area-card {
-                background: white;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
-            }
-
-            .area-image {
-                height: 200px;
-                background-size: cover;
-                background-position: center;
-            }
-
-            .area-content {
-                padding: 20px;
-            }
-
-            .area-content h3 {
-                margin-bottom: 10px;
-                color: var(--primary-color);
-            }
-
-            .contact-section {
-                background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                color: white;
-                padding: 5rem 2rem;
-                text-align: center;
-            }
-
-            .contact-section h2 {
-                margin-bottom: 30px;
-                color: var(--secondary-color);
-            }
-
-            .cta-button {
-                display: inline-block;
-                padding: 15px 40px;
-                background: var(--primary-color);
-                color: white;
-                text-decoration: none;
-                border-radius: 30px;
-                font-weight: bold;
-                transition: background 0.3s ease;
-            }
-
-            .cta-button:hover {
-                background: var(--secondary-color);
-            }
-
-            @media (max-width: 768px) {
-
-                .service-features,
-                .specs-grid,
-                .area-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .nav-links {
-                    display: none;
-                }
-
-                .hero h1 {
-                    font-size: 2rem;
-                }
-            }
-        </style>
-    </head>
-
+        }
+    </style>
+</head>
 <body>
     <header class="header">
         <nav class="nav-container">
             <div class="logo">智惟筑建科技</div>
             <div class="nav-links">
                 <a href="index.html">首页</a>
-                <a href="cases.html">案例研究</a>
+                <div class="dropdown">
+                    <a href="cases.html">行业应用</a>
+                    <div class="dropdown-content">
+                        <a href="cases.html#vr-archive">建筑VR数字档案</a>
+                        <a href="cases.html#building-monitor">建筑结构智能检测/监测</a>
+                        <a href="cases.html#3d-model">建筑三维重建</a>
+                    </div>
+                </div>
                 <a href="services.html">服务与解决方案</a>
+                <a href="contact.html">关于我们</a>
             </div>
         </nav>
     </header>
@@ -267,8 +326,7 @@
             <div class="service-features">
                 <div class="feature-card" data-aos="fade-right">
                     <svg class="feature-icon" viewBox="0 0 24 24">
-                        <path
-                            d="M12,3L2,12H5V20H19V12H22L12,3M12,7.7C14.1,7.7 15.8,9.4 15.8,11.5C15.8,13.6 14.1,15.3 12,15.3C9.9,15.3 8.2,13.6 8.2,11.5C8.2,9.4 9.9,7.7 12,7.7Z" />
+                        <path d="M12,3L2,12H5V20H19V12H22L12,3M12,7.7C14.1,7.7 15.8,9.4 15.8,11.5C15.8,13.6 14.1,15.3 12,15.3C9.9,15.3 8.2,13.6 8.2,11.5C8.2,9.4 9.9,7.7 12,7.7Z" />
                     </svg>
                     <h3>SLAM视觉巡检</h3>
                     <p>采用先进的SLAM技术，实现建筑空间的实时定位与建图，提供精确的三维空间感知能力。</p>
@@ -276,8 +334,7 @@
 
                 <div class="feature-card" data-aos="fade-left">
                     <svg class="feature-icon" viewBox="0 0 24 24">
-                        <path
-                            d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z" />
+                        <path d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z" />
                     </svg>
                     <h3>智能视觉监控</h3>
                     <p>基于深度学习的目标检测和行为分析，实现施工现场的智能化监控和安全管理。</p>
@@ -330,17 +387,16 @@
                     </div>
                 </div>
             </div>
-
-            <div class="contact-section" data-aos="fade-up">
-                <div class="footer-social">
-                    <h2>开启智能建筑新时代</h2>
-                    <p>联系我们，探讨您的项目需求</p>
-                    <p>电话: 188-1072-4099</p>
-                    <div class="social-icons">
-                        <a href="#"><img src="sources/contact_img.png" width="150" height="150" alt="立即咨询"></a>
-                    </div>
-                </div>
         </section>
+
+        <div class="contact-section" data-aos="fade-up">
+            <h2>开启智能建筑新时代</h2>
+            <p>联系我们，探讨您的项目需求</p>
+            <p>电话: 188-1072-4099</p>
+            <div class="social-icons">
+                <a href="#"><img src="sources/contact_img.png" width="150" height="150" alt="立即咨询"></a>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -352,5 +408,4 @@
         });
     </script>
 </body>
-
 </html>

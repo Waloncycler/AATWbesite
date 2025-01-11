@@ -5,22 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我们 - 智惟筑建科技</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="styles.css">
     <style>
+        /* 全局变量与基础设置 */
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1976D2;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            padding-top: 80px;
+        }
+
+        /* 导航栏样式 */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* 导航链接与下拉菜单 */
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links > a,
+        .dropdown > a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 15px;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links > a:hover,
+        .dropdown > a:hover {
+            color: var(--primary-color);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            padding: 0.8rem 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            min-width: 180px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            padding-left: 24px;
+        }
+
+        .dropdown > a::after {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid #333;
+            border-bottom: 2px solid #333;
+            transform: rotate(45deg);
+            margin-left: 8px;
+            position: relative;
+            top: -2px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover > a::after {
+            transform: rotate(-135deg);
+            top: 1px;
+            border-color: var(--primary-color);
+        }
+
+        /* Hero区域样式 */
         .about-hero {
             padding: 120px 0 60px;
-            background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+            background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
             background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
         }
 
-        .about-content {
-            max-width: 1200px;
+        .hero-content {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
         }
 
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+
+        /* 公司简介样式 */
         .company-intro {
             text-align: center;
             margin-bottom: 4rem;
@@ -34,6 +180,7 @@
             color: #666;
         }
 
+        /* 团队成员样式 */
         .team-section {
             padding: 4rem 0;
             background: var(--light-bg);
@@ -54,6 +201,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
         }
 
         .team-member img {
@@ -81,10 +233,10 @@
             line-height: 1.6;
         }
 
+        /* 联系信息样式 */
         .contact-info {
             background: white;
             padding: 4rem 2rem;
-            text-align: center;
         }
 
         .contact-grid {
@@ -98,6 +250,12 @@
 
         .contact-item {
             padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
         }
 
         .contact-item svg {
@@ -115,17 +273,72 @@
         .contact-item p {
             color: #666;
         }
+
+        /* CTA区域样式 */
+        .cta-section {
+            background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9)),
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 通用样式 */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="nav-container">
             <div class="logo">智惟筑建科技</div>
             <div class="nav-links">
                 <a href="index.html">首页</a>
-                <a href="cases.html">案例研究</a>
+                <div class="dropdown">
+                    <a href="cases.html">行业应用</a>
+                    <div class="dropdown-content">
+                        <a href="cases.html#vr-archive">建筑VR数字档案</a>
+                        <a href="cases.html#building-monitor">建筑结构智能检测/监测</a>
+                        <a href="cases.html#3d-model">建筑三维重建</a>
+                    </div>
+                </div>
                 <a href="services.html">服务与解决方案</a>
-                <a href="contact.html">关于我们</a>
+                <a href="contact.html" class="active">关于我们</a>
             </div>
         </nav>
     </header>
@@ -139,8 +352,9 @@
 
     <section class="company-intro">
         <div class="about-content" data-aos="fade-up">
-            <h2>公司简介</h2>
-            <p>智惟筑建科技是一家专注于建筑工程领域的人工智能科技公司，致力于利用先进的人工智能技术为建筑工程行业赋能。我们基于计算机视觉、自然语言处理等技术，提供智能图纸解析、工程现场监测、智能文档处理等产品和服务，帮助提升工程建设效率，降低施工风险，实现建筑工程的智能化转型。</p>
+            <h2 class="section-header">公司简介</h2>
+            <p>智惟筑建科技是一家专注于建筑工程领域的人工智能科技公司，致力于利用先进的人工智能技术为建筑工程行业赋能。我们基于计算机视觉、自然语言处理等技术，提供智能图纸解析、工程现场监测、智能文档处理等产品和服务，帮助提升工程建设效率，降低施工风险，实现建筑工程的智能化转型。
+            </p>
         </div>
     </section>
 
@@ -176,26 +390,38 @@
             <div class="contact-grid">
                 <div class="contact-item" data-aos="fade-up">
                     <svg viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                        <path fill="currentColor"
+                            d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
                     </svg>
                     <h3>公司地址</h3>
                     <p>北京市朝阳区科技园区88号智能大厦A座</p>
                 </div>
                 <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
                     <svg viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                        <path fill="currentColor"
+                            d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                     </svg>
                     <h3>电子邮箱</h3>
                     <p>contact@zhiweizhu.com</p>
                 </div>
                 <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                     <svg viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                        <path fill="currentColor"
+                            d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
                     </svg>
                     <h3>联系电话</h3>
                     <p>400-888-9999</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>开启智能建筑新时代</h2>
+            <p>联系我们，探讨您的项目需求</p>
+            <p>电话: 188-1072-4099</p>
+            <img src="sources/contact_img.png" width="150" height="150" alt="立即咨询">
         </div>
     </section>
 
@@ -206,6 +432,19 @@
             easing: 'ease-in-out',
             once: true
         });
+
+        // 添加滚动监听，控制导航栏样式
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
     </script>
 </body>
-</html> 
+
+</html>
