@@ -278,6 +278,48 @@
                 margin-bottom: 60px;
             }
         }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(120deg, #2196F3, #1976D2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            color: #fffdfd;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 80px 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-content p {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 
